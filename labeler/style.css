@@ -1,0 +1,112 @@
+/* Spiral Chirality · Labeler — Solarized-light, Tufte-ish. */
+
+* { box-sizing: border-box; }
+
+html { background: #fdf6e3; }
+
+body {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 2.25rem 3rem 2rem;
+  font-family: Baskerville, 'Libre Baskerville', Palatino, Georgia, serif;
+  color: #586e75;
+  line-height: 1.5;
+}
+
+header {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #073642;
+  text-align: center;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid #d9cfb8;
+}
+
+main { text-align: center; }
+
+#msg {
+  margin: 4rem auto;
+  max-width: 65ch;
+  font-style: italic;
+  color: #586e75;
+}
+#msg code {
+  font-style: normal;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.85em;
+  color: #073642;
+}
+
+figure { margin: 2rem 0 0; }
+
+#galaxy {
+  display: block;
+  margin: 0 auto;
+  width: min(65vh, 560px);
+  height: min(65vh, 560px);
+  border: 1px solid #d9cfb8;
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #93a1a1;
+}
+
+/* current label of the shown galaxy, in its class colour */
+#word {
+  margin: 0.3rem 0 1.4rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+}
+#word.none    { color: #93a1a1; }
+#word.ccw     { color: #268bd2; }
+#word.cw      { color: #cb4b16; }
+#word.discard { color: #93a1a1; font-style: italic; }
+
+#bar  { height: 3px; background: #eee8d5; }
+#fill { height: 100%; width: 0; background: #93a1a1; }
+
+#ptext {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #93a1a1;
+}
+
+#warn {
+  margin: 0.9rem auto 0;
+  max-width: 65ch;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #073642;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid #d9cfb8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2.4rem;
+  row-gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #93a1a1;
+}
+
+kbd {
+  font-family: inherit;
+  font-size: 0.85em;
+  color: #586e75;
+  border: 1px solid #d9cfb8;
+  padding: 0 0.4em;
+  margin-right: 0.1em;
+}
+
+.hint .glyph { vertical-align: -6px; margin: 0 0.2rem 0 0.35rem; }
+.hint .ccw   { color: #268bd2; }
+.hint .cw    { color: #cb4b16; }

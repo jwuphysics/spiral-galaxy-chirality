@@ -1,0 +1,16 @@
+[project]
+name = "spiral-chirality"
+version = "0.1.0"
+description = "Chirality of galaxy spiral arms — log-polar CNN proof of concept"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2",
+    "pillow>=10",
+    "torch>=2.6",
+]
+
+[dependency-groups]
+dev = [
+    "playwright>=1.48",
+]
