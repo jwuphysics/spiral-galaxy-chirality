@@ -14,6 +14,8 @@ wheels/
 data/
 model/cache/
 model/checkpoints/
+results/results*
+results/inputs/
 results/synthetic_images/
 results/logpolar/
 labeler/labels.json

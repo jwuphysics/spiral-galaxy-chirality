@@ -1,0 +1,275 @@
+/* Spiral Chirality · Results — Solarized Light, Baskerville, Tufte-ish. */
+
+:root {
+  --bg: #fdf6e3;
+  --bg-alt: #eee8d5;
+  --rule: #d9cfb8;
+  --ink: #586e75;
+  --muted: #93a1a1;
+  --strong: #073642;
+  --ccw: #268bd2;
+  --cw: #cb4b16;
+  --discard: #93a1a1;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Baskerville, 'Libre Baskerville', Palatino, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+#page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.2rem 2.4rem 2.2rem;
+}
+
+/* ---- type ------------------------------------------------------------ */
+
+h1 {
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1.9rem;
+  color: var(--strong);
+  margin: 0 0 0.45rem;
+}
+
+h2 {
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1.14rem;
+  color: var(--ink);
+  margin: 3rem 0 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+}
+
+h3 {
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  color: var(--ink);
+  margin: 2.1rem 0 0.75rem;
+}
+
+p { max-width: 65ch; }
+
+.meta-line {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+  max-width: none;
+}
+.meta-line .notes { font-style: italic; }
+
+/* ---- methods --------------------------------------------------------- */
+
+.methods-note {
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 1.4rem;
+}
+.methods-note i, .methods-note sub, .methods-note sup { font-style: italic; }
+
+#diagram-fig { margin: 0; }
+#methods-diagram {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+}
+#diagram-fig figcaption {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+  max-width: 65ch;
+}
+
+.diag-stroke { fill: none; stroke: #586e75; stroke-width: 1.5; }
+
+svg text { font-family: inherit; }
+svg .panel-label {
+  fill: var(--muted);
+  font-size: 11px;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  text-anchor: middle;
+}
+svg .axis-label {
+  fill: var(--muted);
+  font-size: 11px;
+  font-style: italic;
+  text-anchor: middle;
+}
+svg .axis { stroke: var(--rule); stroke-width: 1; fill: none; }
+svg .tick-label { fill: var(--muted); font-size: 11px; }
+svg .end-label { fill: var(--ink); font-size: 11.5px; font-style: italic; }
+svg .annot { fill: var(--muted); font-size: 10.5px; }
+svg .series { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+
+/* ---- charts ---------------------------------------------------------- */
+
+.charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3.5rem;
+  align-items: flex-start;
+}
+.chart-fig {
+  flex: 1 1 380px;
+  min-width: 300px;
+  max-width: 540px;
+  margin: 0;
+}
+.chart-fig svg { display: block; width: 100%; height: auto; }
+.chart-cap {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+
+.empty-note {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---- test performance ------------------------------------------------ */
+
+.test-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.2rem 4.5rem;
+  align-items: flex-start;
+}
+.test-left { flex: 0 1 auto; }
+.test-right { flex: 1 1 380px; min-width: 300px; max-width: 540px; margin: 0; }
+
+.acc-number {
+  font-size: 3.3rem;
+  line-height: 1.1;
+  color: var(--strong);
+  font-variant-numeric: tabular-nums;
+}
+.acc-note {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+
+table.confusion {
+  border-collapse: collapse;
+  margin-top: 1.7rem;
+  font-variant-numeric: tabular-nums;
+}
+.confusion th, .confusion td {
+  font-weight: normal;
+  padding: 0.42rem 1rem;
+  text-align: right;
+}
+.confusion thead th {
+  color: var(--muted);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.88rem;
+}
+.confusion thead tr:first-child th { text-align: center; }
+.confusion thead tr.class-row th { font-size: 1rem; letter-spacing: 0.02em; }
+.confusion thead tr.class-row { border-bottom: 1px solid var(--rule); }
+.confusion tbody th { text-align: left; padding-left: 0; white-space: nowrap; }
+.confusion .true-label {
+  color: var(--muted);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.88rem;
+  margin-right: 0.45em;
+}
+.confusion .pct { color: var(--muted); font-size: 0.82em; margin-left: 0.55em; }
+
+/* ---- galleries ------------------------------------------------------- */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem 2rem;
+  margin-top: 0.9rem;
+}
+.gallery-note {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: -0.25rem 0 0.4rem;
+}
+
+figure.example { margin: 0; width: 226px; }
+.pair { display: flex; gap: 4px; }
+.thumb {
+  width: 110px;
+  height: 110px;
+  display: block;
+  flex: 0 0 110px;
+}
+.thumb img {
+  width: 110px;
+  height: 110px;
+  display: block;
+  border: 1px solid var(--rule);
+}
+.thumb.missing {
+  border: 1px solid var(--rule);
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.missing-label {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.72rem;
+}
+
+figure.example figcaption { margin-top: 0.3rem; line-height: 1.35; }
+.ex-id {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+.ex-verdict { font-size: 0.95rem; color: var(--ink); }
+.ex-verdict .arrow { color: var(--muted); }
+.ex-p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- footer ---------------------------------------------------------- */
+
+#colophon {
+  margin-top: 4rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+/* ---- narrow screens -------------------------------------------------- */
+
+@media (max-width: 720px) {
+  #page { padding: 2.2rem 1.2rem 1.6rem; }
+  .confusion th, .confusion td { padding: 0.4rem 0.6rem; }
+}
